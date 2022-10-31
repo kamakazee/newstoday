@@ -1,0 +1,28 @@
+.topicArticles {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.articles-list {
+
+    width:30%;
+    min-width:450px;
+
+}
+
+.category-label {
+    background-color: rgb(190, 190, 210);
+    padding: 20px;
+}
+
+.article-item {
+    border: solid 1px black;
+    margin: 10px;
+}
+
+.article-label {
+    margin: 10px;
+}

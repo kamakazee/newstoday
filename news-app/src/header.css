@@ -1,0 +1,41 @@
+.headerprofile-container {
+    display: inline-block;
+    width:50%;
+
+
+}
+
+
+.header-profile {
+    width: 15%;
+    min-width: 100px;
+    max-width: 250px;
+    padding: 10px;
+}
+
+.header-profilepic {
+    min-width: 80%;
+    max-width: 80%;
+    padding: 10px;
+
+}
+
+.header {
+    background-color: rgb(167, 219, 167);
+    height: 200px;
+
+
+}
+
+.header-username {
+    background-color: white;
+    display: inline-block;
+    padding: 10px;
+}
+
+.title {
+    display:inline-block;
+    font-size: 3em;
+    width:50%;
+    text-decoration: underline;
+}

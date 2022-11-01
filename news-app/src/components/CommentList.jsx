@@ -7,6 +7,7 @@ const CommentList = ({articleId, users})=>{
 
     const [comments, setComments] = useState([])
     const [isLoading, setLoading] = useState(true)
+    const [isHidden, setHidden] = useState(true)
 
 
     useEffect(()=>{
@@ -18,9 +19,17 @@ const CommentList = ({articleId, users})=>{
         })
     }, [])
 
+    if(isHidden) return <button onClick={()=>{
+        setHidden(false)
+    }}>Show Comments</button>
+
     if (isLoading) return <p>Loading......</p>
 
-    return (<>{comments.map((comment, index)=>{
+    return (<>
+    <button onClick={()=>{
+        setHidden(true)
+    }}>Hide Comments</button>
+    {comments.map((comment, index)=>{
         let commentAuthor = {}
         users.forEach((user)=>{
             if (user.username===comment.author){

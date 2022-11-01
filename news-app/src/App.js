@@ -13,6 +13,7 @@ function App() {
 
   const [user, setUser] =useState({})
   const [isLoading, setLoading] = useState(true)
+  const [articlesByTopic, setArticlesByTopic] = useState({})
   
   useEffect(()=>{
     setLoading(true)
@@ -29,7 +30,7 @@ function App() {
     <div className="App">
       <Header user={user}/>
       <Routes>
-        <Route path="/" element={<HomePage />}/>
+        <Route path="/" element={<HomePage articlesByTopic={articlesByTopic} setArticlesByTopic={setArticlesByTopic}/>}/>
         <Route path="/articles/topic/:topic" element={<SingleArticlesByTopic />}/>
       </Routes>
  

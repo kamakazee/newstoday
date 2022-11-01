@@ -34,3 +34,11 @@ const myApi = axios.create({
     })
   };
 
+  export const updateVotesByArticleId = (vote, article_id) => {
+    return myApi.patch(`/articles/${article_id}`, {inc_votes: vote}).then(({data}) => {
+        const {article} = data;
+      return article;
+    })
+  };
+
+

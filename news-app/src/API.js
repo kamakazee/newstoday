@@ -42,3 +42,11 @@ const myApi = axios.create({
   };
 
 
+  export const fetchArticlesByArticleId = (articleId) => {
+    return myApi.get(`/articles/${articleId}`).then(({data}) => {
+        const {article} = data;
+      return article;
+    });
+  };
+
+  

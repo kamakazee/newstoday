@@ -8,6 +8,8 @@ const myApi = axios.create({
     return myApi.get(`/users/${username}`).then(({data}) => {
         const {user} = data;
       return user;
+    }).catch((err)=>{
+      return <h2>An error occurred: {err} </h2>
     });
   };
 
@@ -15,7 +17,7 @@ const myApi = axios.create({
     return myApi.get(`/users`).then(({data}) => {
         const {users} = data;
       return users;
-    });
+    })
   };
 
 
@@ -23,6 +25,8 @@ const myApi = axios.create({
     return myApi.get(`/Topics`).then(({data}) => {
         const {topics} = data;
       return topics;
+    }).catch((err)=>{
+      return <h2>An error occurred: {err} </h2>
     });
   };
 
@@ -31,6 +35,8 @@ const myApi = axios.create({
     return myApi.get(`/articles?topic=${topic}`).then(({data}) => {
         const {articles} = data;
       return articles;
+    }).catch((err)=>{
+      return <h2>An error occurred: {err} </h2>
     });
   };
 

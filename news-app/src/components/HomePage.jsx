@@ -12,7 +12,6 @@ const HomePage = ({user})=>{
     useEffect(()=>{
         API.fetchTopics().then((topics)=>{
             setTopics(topics)
-
             topics.forEach(({slug: topic})=>{
                 console.log(topic)
                 API.fetchArticlesByTopic(topic).then((articles)=>{
@@ -31,7 +30,9 @@ const HomePage = ({user})=>{
 
     if (articlesLoading) return <h2>articles loading....</h2>
 
-    return <TopicGallery articlesByTopic={articlesByTopic}/>
+    return <><h2> Articles by Category</h2>
+    <TopicGallery articlesByTopic={articlesByTopic}/>
+    </>
   
 }
 

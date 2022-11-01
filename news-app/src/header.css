@@ -9,6 +9,7 @@
     min-width: 50px;
     max-width: 120px;
     padding: 10px;
+    margin: auto;
 }
 
 .header-profilepic {
@@ -22,8 +23,9 @@
     background-color: rgb(167, 219, 167);
     height: 200px;
     padding: 20px;
-    max-width:1500px;
+    max-width:1200px;
     min-width:500px;
+    margin:auto;
 
 }
 

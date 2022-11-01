@@ -12,25 +12,22 @@ const HomePage = ({user})=>{
     useEffect(()=>{
         API.fetchTopics().then((topics)=>{
             setTopics(topics)
-        })
-    }, [])
 
-    useEffect(()=>{
-        topics.forEach(({slug: topic})=>{
-            console.log(topic)
-            API.fetchArticlesByTopic(topic).then((articles)=>{
-                setArticlesByTopic((currentArticles)=>{
-                    console.log("Current articles: ", currentArticles)
-                    let newArticles = {...currentArticles}
-                    newArticles[topic]= articles
-                    return newArticles
+            topics.forEach(({slug: topic})=>{
+                console.log(topic)
+                API.fetchArticlesByTopic(topic).then((articles)=>{
+                    setArticlesByTopic((currentArticles)=>{
+                        console.log("Current articles: ", currentArticles)
+                        let newArticles = {...currentArticles}
+                        newArticles[topic]= articles
+                        return newArticles
+                    })
+    
+                    setArticlesLoading(false)
                 })
-
-                setArticlesLoading(false)
             })
         })
-
-    },[topics])
+    }, [])
 
     if (articlesLoading) return <h2>articles loading....</h2>
 

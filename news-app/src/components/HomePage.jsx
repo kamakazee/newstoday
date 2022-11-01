@@ -3,9 +3,9 @@ import * as API from '../API'
 import {useState, useEffect} from 'react'
 
 
-const HomePage = ({articlesByTopic, setArticlesByTopic})=>{
+const HomePage = ()=>{
     const [topics, setTopics] = useState([])
-    //const [articlesByTopic, setArticlesByTopic] = useState({})
+    const [articlesByTopic, setArticlesByTopic] = useState({})
     const [articlesLoading, setArticlesLoading] = useState(true)
 
 

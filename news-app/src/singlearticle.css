@@ -1,0 +1,34 @@
+.article-header{
+    border: solid 1px black;
+    width: 100%;
+    min-width:500px;
+    padding: 20px;
+    max-width:1500px;
+    gap:100px;
+}
+
+.article-author {
+    border: solid 1px black;
+    display:inline-block;
+
+}
+
+.article-body {
+    width: 100%;
+    min-width:500px;
+    max-width:1500px;
+    border: solid 1px black;
+    text-align:left;
+    padding: 30px;
+}
+
+.article-title {
+    width:300px;
+}
+
+.article-header h2{
+    border: solid 1px black;
+    display: inline-block;
+    margin:40px;
+  
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import * as API from '../API.js'
 import HeaderProfile from "./HeaderProfile.jsx"
+import TopicSelector from "./TopicSelector.jsx"
 
 const SingleArticle = ()=>{
 
@@ -25,11 +26,12 @@ const SingleArticle = ()=>{
     if(isLoading) return <p>Loading....</p>
 
     return <>
+    <TopicSelector />
     <div className="article-header">
 
         <h2 className="article-title">Title: {article.title}</h2>
-        <h2 >Comments: <br/>{article.comment_count}</h2>
-        <h2 >Likes: <br/>{article.votes}</h2>
+        <h2 >Comments: <br/>{article.comment_count}
+        <hr/> Likes: <br/>{article.votes}</h2>
 
 
        <div className="article-author">

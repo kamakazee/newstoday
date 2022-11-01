@@ -41,4 +41,10 @@ const myApi = axios.create({
     });
   };
 
-  
+  export const fetchCommentsByArticleId = (articleId) => {
+    return myApi.get(`/articles/${articleId}/comment`).then(({data}) => {
+        const {comments} = data;
+      return comments;
+    });
+  };
+

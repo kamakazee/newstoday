@@ -11,6 +11,10 @@ const SingleArticle = ()=>{
     const [isLoading, setLoading] = useState(true)
     const [author, setAuthor] = useState({})
 
+    API.fetchCommentsByArticleId(articleId.article_id).then((comments)=>{
+        console.log(comments)
+    })
+
 
     useEffect(()=>{
         setLoading(true)

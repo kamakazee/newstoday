@@ -31,7 +31,15 @@
     background-color: rgb(126, 183, 223);
     border-bottom-left-radius:25px;
     border-bottom-right-radius:25px;
+    font-family:'Courier New', Courier, monospace;
 }
+
+.article-body p {
+    background-color: white;
+    padding:30px;
+
+}
+
 
 .article-title {
     width:300px;

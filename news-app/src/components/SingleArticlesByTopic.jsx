@@ -20,6 +20,7 @@ const SingleArticlesByTopic = ()=>{
             setArticles(articles)
             API.fetchUsers().then((users)=>{
                 console.log(users)
+                setUsers(users)
                 setLoading(false)
             })
         })
@@ -30,9 +31,17 @@ const SingleArticlesByTopic = ()=>{
     if (isLoading) return <p>Loading....</p>
 
     return( <>
-    <h2>Inside of single page of Articles By Topic: {topic}</h2>
+    <h2>{topic} Articles</h2>
     {articles.map((article, index)=>{
-        return <SingleArticleByTopicItem key={index} article={article}/>
+
+        let img_url = ""
+        users.forEach((user)=>{
+            if (user.username===article.author){
+                img_url=user.avatar_url
+            }
+        })
+
+        return <SingleArticleByTopicItem img_url={img_url} key={index} article={article}/>
     })}
     </>
     )

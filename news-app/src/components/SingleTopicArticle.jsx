@@ -5,7 +5,6 @@ import LikeButton from './LikeButton'
 
 const SingleArticleByTopicItem = ({article, img_url})=>{
 
-    const [likeText, setLikeText] = useState("Like")
     const [likes, setLikes] = useState(article.votes)
 
   

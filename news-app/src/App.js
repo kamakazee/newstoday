@@ -7,7 +7,7 @@ import {useState, useEffect} from 'react'
 import * as API from './API.js'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import HomePage from './components/HomePage';
-import SingleArticlesByTopic from './components/SingleArticlesByTopic';
+import TopicArticles from './components/TopicArticles';
 
 function App() {
 
@@ -32,7 +32,7 @@ function App() {
       <Header user={user}/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/articles/topic/:topic" element={<SingleArticlesByTopic />}/>
+        <Route path="/articles/topic/:topic" element={<TopicArticles />}/>
       </Routes>
  
     </div>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import * as API from '../API.js'
-import SingleArticleByTopicItem from "./SingleArticleByTopicItem.jsx"
+import SingleTopicArticle from "./SingleTopicArticle.jsx"
 
 
-const SingleArticlesByTopic = ()=>{
+const TopicArticles = ()=>{
 
     const {topic} = useParams()
 
@@ -41,10 +41,10 @@ const SingleArticlesByTopic = ()=>{
             }
         })
 
-        return <SingleArticleByTopicItem img_url={img_url} key={index} article={article}/>
+        return <SingleTopicArticle img_url={img_url} key={index} article={article}/>
     })}
     </>
     )
 }
 
-export default SingleArticlesByTopic
+export default TopicArticles

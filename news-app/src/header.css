@@ -2,20 +2,18 @@
     display: inline-block;
     width:50%;
 
-
 }
 
-
 .header-profile {
-    width: 15%;
-    min-width: 100px;
-    max-width: 250px;
+    width:100%;
+    min-width: 50px;
+    max-width: 120px;
     padding: 10px;
 }
 
 .header-profilepic {
-    min-width: 80%;
-    max-width: 80%;
+    width:100%;
+    
     padding: 10px;
 
 }
@@ -23,7 +21,9 @@
 .header {
     background-color: rgb(167, 219, 167);
     height: 200px;
-
+    padding: 20px;
+    max-width:1500px;
+    min-width:500px;
 
 }
 
@@ -33,9 +33,18 @@
     padding: 10px;
 }
 
-.title {
-    display:inline-block;
-    font-size: 3em;
+.title-box{
     width:50%;
+    max-height: 250px;
+    display:inline-block;
+    text-align: right;
+    text-decoration: underline;
+
+}
+
+.title {
+    width:100%;
+    text-align: right;
+    font-size: 45px;
     text-decoration: underline;
 }

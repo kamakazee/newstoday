@@ -8,7 +8,9 @@ const SingleArticleByTopicItem = ({article, img_url})=>{
     const [likes, setLikes] = useState(article.votes)
 
     const updateLikes = (vote, article_id)=>{
-        API.updateVotesByArticleId(1, article.article_id).then((article)=>{
+        API.updateVotesByArticleId(vote, article_id).then((article)=>{
+
+            console.log("Update complete", article)
             
         }).catch((err)=>{
             setLikes((currentLikes)=>{
@@ -22,6 +24,7 @@ const SingleArticleByTopicItem = ({article, img_url})=>{
     const handleClick = (event)=>{
 
         setLikeText((currentText)=>{
+
             if (currentText==="Like"){
 
                 setLikes((currentLikes)=>{

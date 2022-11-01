@@ -1,9 +1,10 @@
 import TopicGallery from './TopicGallery'
 import * as API from '../API'
 import {useState, useEffect} from 'react'
+import TopicSelector from './TopicSelector'
 
 
-const HomePage = ({user})=>{
+const HomePage = ()=>{
     const [topics, setTopics] = useState([])
     const [articlesByTopic, setArticlesByTopic] = useState({})
     const [articlesLoading, setArticlesLoading] = useState(true)
@@ -30,7 +31,9 @@ const HomePage = ({user})=>{
 
     if (articlesLoading) return <h2>articles loading....</h2>
 
-    return <><h2> Articles by Category</h2>
+    return <>
+    <TopicSelector />
+    <h2> Articles by Category</h2>
     <TopicGallery articlesByTopic={articlesByTopic}/>
     </>
   

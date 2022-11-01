@@ -1,10 +1,11 @@
 import ArticlesByTopic from "./ArticlesByTopic"
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 
 const Topic = ({topicName, articles})=>{
 
 
     return <div className="articles-list">
-    <h2 className="category-label">{topicName}</h2>
+    <Link to={`/articles/topic/${topicName}`}><h2 className="category-label">{topicName}</h2></Link>
     <ArticlesByTopic articles={articles}/>
 
     </div>

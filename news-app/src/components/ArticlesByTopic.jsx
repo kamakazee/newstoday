@@ -4,8 +4,8 @@ const ArticlesByTopic = ({articles})=>{
 
 
     return <div >
-    {articles.map((article)=>{
-        return <ArticlesByTopicListItem article={article}/>
+    {articles.map((article, index)=>{
+        return <ArticlesByTopicListItem key={index} article={article}/>
     })}
 
     </div>

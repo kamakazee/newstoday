@@ -10,15 +10,18 @@ const SingleArticlesByTopic = ()=>{
 
     const [articles, setArticles] = useState([])
     const [isLoading, setLoading] = useState(true)
+    const [users, setUsers] = useState([])
 
     useEffect(()=>{
 
         setLoading(true)
 
         API.fetchArticlesByTopic(topic).then((articles)=>{
-            console.log(articles)
             setArticles(articles)
-            setLoading(false)
+            API.fetchUsers().then((users)=>{
+                console.log(users)
+                setLoading(false)
+            })
         })
 
     }, [])

@@ -11,6 +11,14 @@ const myApi = axios.create({
     });
   };
 
+  export const fetchUsers = (username) => {
+    return myApi.get(`/users`).then(({data}) => {
+        const {users} = data;
+      return users;
+    });
+  };
+
+
   export const fetchTopics = () => {
     return myApi.get(`/Topics`).then(({data}) => {
         const {topics} = data;

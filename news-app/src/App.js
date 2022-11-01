@@ -6,6 +6,7 @@ import {useState, useEffect} from 'react'
 import * as API from './API.js'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import HomePage from './components/HomePage';
+import SingleArticle from './components/SingleArticle';
 
 function App() {
 
@@ -29,6 +30,9 @@ function App() {
       <Header user={user}/>
       <Routes>
         <Route path="/" element={<HomePage />}/>
+
+
+        <Route path="/article/:article_id" element={<SingleArticle/>}/>
       </Routes>
  
     </div>

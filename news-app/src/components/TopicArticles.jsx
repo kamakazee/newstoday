@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import * as API from '../API.js'
 import SingleTopicArticle from "./SingleTopicArticle.jsx"
+import TopicSelector from "./TopicSelector.jsx"
 
 
 const TopicArticles = ()=>{
@@ -19,18 +20,18 @@ const TopicArticles = ()=>{
         API.fetchArticlesByTopic(topic).then((articles)=>{
             setArticles(articles)
             API.fetchUsers().then((users)=>{
-                console.log(users)
                 setUsers(users)
                 setLoading(false)
             })
         })
 
-    }, [])
+    }, [topic])
 
 
     if (isLoading) return <p>Loading....</p>
 
     return( <>
+     <TopicSelector />
     <h2>{topic} Articles</h2>
     {articles.map((article, index)=>{
 

@@ -1,6 +1,7 @@
 import TopicGallery from './TopicGallery'
 import * as API from '../API'
 import {useState, useEffect} from 'react'
+import TopicSelector from './TopicSelector'
 
 
 const HomePage = ()=>{
@@ -30,7 +31,9 @@ const HomePage = ()=>{
 
     if (articlesLoading) return <h2>articles loading....</h2>
 
-    return <><h2> Articles by Category</h2>
+    return <>
+    <TopicSelector />
+    <h2> Articles by Category</h2>
     <TopicGallery articlesByTopic={articlesByTopic}/>
     </>
   

@@ -35,7 +35,7 @@ const CommentList = ({articleId, users, comments, setComments, user})=>{
                 commentAuthor=user
             }
         })
-           return <CommentItem key={index} commentAuthor={commentAuthor} comment={comment} user={user} setComments={setComments}/>
+           return <CommentItem key={index} comments={comments} commentAuthor={commentAuthor} comment={comment} user={user} setComments={setComments}/>
     })}</>)
 
 }

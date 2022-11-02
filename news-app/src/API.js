@@ -49,6 +49,16 @@ const myApi = axios.create({
     });
   };
 
+
+  export const postCommentByArticleId = (articleId, comment) => {
+    return myApi.post(`/articles/${articleId}/commen`, comment).then(({data}) => {
+        const {comment} = data;
+      return comment;
+    });
+  };
+
+  
+  
   export const fetchCommentsByArticleId = (articleId) => {
     return myApi.get(`/articles/${articleId}/comment`).then(({data}) => {
         const {comments} = data;

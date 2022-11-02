@@ -3,6 +3,7 @@ import './header.css';
 import './topic-gallery.css';
 import './singlearticle.css';
 import './singletopicarticles.css';
+import './commentsform.css';
 import './comment.css';
 import Header from './components/Header';
 import {useState, useEffect} from 'react'
@@ -40,7 +41,7 @@ function App() {
       <Header user={user}/>
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/article/:article_id" element={<SingleArticle users={users}/>}/>
+        <Route path="/article/:article_id" element={<SingleArticle user={user} users={users}/>}/>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/articles/topic/:topic" element={<TopicArticles />}/>
       </Routes>

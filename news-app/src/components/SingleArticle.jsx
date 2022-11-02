@@ -3,16 +3,18 @@ import { useParams } from "react-router-dom"
 import * as API from '../API.js'
 import HeaderProfile from "./HeaderProfile.jsx"
 import TopicSelector from "./TopicSelector.jsx"
+import CommentForm from "./CommentForm.jsx"
 import CommentsList from "./CommentList.jsx"
 import LikeButton from "./LikeButton.jsx"
 
-const SingleArticle = ({users})=>{
+const SingleArticle = ({users, user})=>{
 
     const articleId = useParams()
     const [article, setArticle] = useState("")
     const [isLoading, setLoading] = useState(true)
     const [author, setAuthor] = useState({})
     const [likes, setLikes] = useState(0)
+    const [comments, setComments] = useState([])
 
     useEffect(()=>{
         setLoading(true)
@@ -46,9 +48,11 @@ const SingleArticle = ({users})=>{
         <LikeButton article={article} setLikes={setLikes}/>
         <p>{article.body} </p>
     </article>
+    <CommentForm user={user} articleId={articleId} setComments={setComments}/>
     <h2>Discussion</h2>
-    <CommentsList articleId={articleId.article_id} users={users}/>
+    <CommentsList articleId={articleId.article_id} users={users} comments={comments} setComments={setComments}/>
     </>
+    
 }
 
 export default SingleArticle

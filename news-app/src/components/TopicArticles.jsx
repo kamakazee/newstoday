@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import * as API from '../API.js'
 import SingleTopicArticle from "./SingleTopicArticle.jsx"
 import TopicSelector from "./TopicSelector.jsx"
+import Sort from "./Sort.jsx"
 
 
 const TopicArticles = ()=>{
@@ -27,11 +28,16 @@ const TopicArticles = ()=>{
 
     }, [topic])
 
+    const sortableProperties = ["created_at", "votes", "title", "topic", "author"]
+
 
     if (isLoading) return <p>Loading....</p>
 
     return( <>
     <h2>{topic} Articles</h2>
+    
+    <Sort articleProperties={sortableProperties} setArticles={setArticles} topic={topic}/>
+
     {articles.map((article, index)=>{
 
         let img_url = ""

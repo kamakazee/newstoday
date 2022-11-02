@@ -66,3 +66,12 @@ const myApi = axios.create({
     });
   };
 
+
+  export const fetchSortedArticles = (property, topic) => {
+    return myApi.get(`/articles?sort_by=${property}&&topic=${topic}`).then(({data}) => {
+        const {articles} = data;
+      return articles;
+    });
+  };
+
+

@@ -7,6 +7,7 @@ import './commentsform.css';
 import './comment.css';
 import './topicselector.css';
 import './button.css';
+import './sort.css';
 import Header from './components/Header';
 import {useState, useEffect} from 'react'
 import * as API from './API.js'

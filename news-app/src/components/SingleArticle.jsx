@@ -7,7 +7,7 @@ import CommentForm from "./CommentForm.jsx"
 import CommentsList from "./CommentList.jsx"
 import LikeButton from "./LikeButton.jsx"
 
-const SingleArticle = ({users})=>{
+const SingleArticle = ({users, user})=>{
 
     const articleId = useParams()
     const [article, setArticle] = useState("")
@@ -47,7 +47,7 @@ const SingleArticle = ({users})=>{
         <LikeButton article={article} setLikes={setLikes}/>
         <p>{article.body} </p>
     </article>
-    <CommentForm/>
+    <CommentForm user={user}/>
     <h2>Discussion</h2>
     <CommentsList articleId={articleId.article_id} users={users}/>
     </>

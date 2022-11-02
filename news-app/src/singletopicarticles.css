@@ -5,3 +5,15 @@
 .topicarticle {
     font-size:30px;
 }
+
+.topicarticletitle {
+    font-size:30px;
+    width:700px;
+    margin: auto;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+.topicarticletitle:hover {
+    background-color: rgb(108, 226, 167);
+}

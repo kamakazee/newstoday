@@ -6,6 +6,7 @@
   margin: auto;
   max-width: 1200px;
   justify-content: center;
+  border: solid 1px black;
 
 }
 
@@ -28,6 +29,7 @@
     margin-right: auto;
     margin-top: 20px;
     width: 350px;
+    border: solid 1px black;
   
   }
 
@@ -40,6 +42,7 @@
     border-radius:25px;
     background-color: rgb(174, 216, 247);
     display:flex;
+    padding:30px;
 }
   
 

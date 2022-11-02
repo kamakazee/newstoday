@@ -39,10 +39,10 @@ function App() {
     <div className="App">
       <Header user={user}/>
       <Routes>
-        <Route path="/" element={<HomePage />}/>
+        <Route path="/" element={<HomePage users={users}/>}/>
         <Route path="/article/:article_id" element={<SingleArticle users={users}/>}/>
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/articles/topic/:topic" element={<TopicArticles />}/>
+        <Route path="/articles/topic/:topic" element={<TopicArticles/>}/>
       </Routes>
  
     </div>

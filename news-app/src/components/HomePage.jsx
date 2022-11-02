@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react'
 import TopicSelector from './TopicSelector'
 
 
-const HomePage = ()=>{
+const HomePage = ({users})=>{
     const [topics, setTopics] = useState([])
     const [articlesByTopic, setArticlesByTopic] = useState({})
     const [articlesLoading, setArticlesLoading] = useState(true)
@@ -32,7 +32,7 @@ const HomePage = ()=>{
     return <>
     <TopicSelector />
     <h2> Articles by Category</h2>
-    <TopicGallery articlesByTopic={articlesByTopic}/>
+    <TopicGallery articlesByTopic={articlesByTopic} users={users}/>
     </>
   
 }

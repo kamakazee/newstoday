@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import * as API from '../API.js'
 import HeaderProfile from "./HeaderProfile.jsx"
 import TopicSelector from "./TopicSelector.jsx"
+import CommentForm from "./CommentForm.jsx"
 
 const SingleArticle = ()=>{
 
@@ -41,7 +42,9 @@ const SingleArticle = ()=>{
     <article className="article-body">
         <p>{article.body}</p>
     </article>
+    <CommentForm/>
     </>
+    
 }
 
 export default SingleArticle

@@ -3,6 +3,7 @@ import './header.css';
 import './topic-gallery.css';
 import './singlearticle.css';
 import './singletopicarticles.css';
+import './commentsform.css';
 import Header from './components/Header';
 import {useState, useEffect} from 'react'
 import * as API from './API.js'

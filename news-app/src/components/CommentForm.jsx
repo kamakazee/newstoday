@@ -1,5 +1,6 @@
 import { useState } from "react"
 import * as API from '../API.js'
+import FormValidation from "./FormValidation.jsx";
 import HeaderProfile from "./HeaderProfile";
 
 
@@ -59,26 +60,24 @@ const CommentForm = ({user, articleId, setComments})=>{
     return <>
 
        <div className="commentform-header">
+            <FormValidation/>
             <div className="commentform-author">
             <HeaderProfile user={user} />
             </div>
         <h2 >Tell us what you think</h2>
       </div>
       <article className="commentform-body">
-      <form className="comment-form" >
-        <textarea value={commentInput} onChange={(event)=>{
-            handleInput(event)
-        }} name="comment" form="usrform"></textarea>
-        <button type="submit" onClick={(event)=>{
+      <form className="comment-form" onSubmit={(event)=>{
             handleSubmit(event)
-        }}>{postText}</button>
+        }}>
+        <textarea type="text" value={commentInput} onChange={(event)=>{
+            handleInput(event)
+        }} required></textarea>
+        <button type="submit" >{postText}</button>
     </form>
+
+    
       </article>
-    
-    
-    
-    
-   
     </>
 }
 

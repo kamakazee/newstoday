@@ -14,10 +14,8 @@ const HomePage = ()=>{
         API.fetchTopics().then((topics)=>{
             setTopics(topics)
             topics.forEach(({slug: topic})=>{
-                console.log(topic)
                 API.fetchArticlesByTopic(topic).then((articles)=>{
                     setArticlesByTopic((currentArticles)=>{
-                        console.log("Current articles: ", currentArticles)
                         let newArticles = {...currentArticles}
                         newArticles[topic]= articles
                         return newArticles

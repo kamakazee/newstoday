@@ -4,6 +4,7 @@ import './topic-gallery.css';
 import './singlearticle.css';
 import './singletopicarticles.css';
 import './commentsform.css';
+import './comment.css';
 import Header from './components/Header';
 import {useState, useEffect} from 'react'
 import * as API from './API.js'
@@ -17,6 +18,7 @@ function App() {
 
   const [user, setUser] =useState({})
   const [isLoading, setLoading] = useState(true)
+  const [users, setUsers] = useState([])
 
   
   useEffect(()=>{
@@ -25,6 +27,10 @@ function App() {
       setUser(user)
       setLoading(false)
    })
+
+   API.fetchUsers().then((users)=>{
+    setUsers(users)
+})
   }, [])
 
   if (isLoading) return <h2> Loading...</h2>
@@ -35,7 +41,7 @@ function App() {
       <Header user={user}/>
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/article/:article_id" element={<SingleArticle/>}/>
+        <Route path="/article/:article_id" element={<SingleArticle users={users}/>}/>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/articles/topic/:topic" element={<TopicArticles />}/>
       </Routes>

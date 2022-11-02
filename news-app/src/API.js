@@ -34,6 +34,14 @@ const myApi = axios.create({
     })
   };
 
+  export const updateVotesByArticleId = (vote, article_id) => {
+    return myApi.patch(`/articles/${article_id}`, {inc_votes: vote}).then(({data}) => {
+        const {article} = data;
+      return article;
+    })
+  };
+
+
   export const fetchArticlesByArticleId = (articleId) => {
     return myApi.get(`/articles/${articleId}`).then(({data}) => {
         const {article} = data;
@@ -53,3 +61,10 @@ const myApi = axios.create({
 
 
   
+  export const fetchCommentsByArticleId = (articleId) => {
+    return myApi.get(`/articles/${articleId}/comment`).then(({data}) => {
+        const {comments} = data;
+      return comments;
+    });
+  };
+

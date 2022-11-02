@@ -1,4 +1,5 @@
 import { useState } from "react"
+import * as API from '../API.js'
 
 const CommentForm = ()=>{
 
@@ -6,7 +7,7 @@ const CommentForm = ()=>{
 
     const handleSubmit = (event)=>{
         event.preventDefault()
-        
+
     }
 
     const handleInput = (event)=>{

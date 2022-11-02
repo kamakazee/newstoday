@@ -30,7 +30,6 @@ const HomePage = ({users})=>{
     if (articlesLoading) return <h2>articles loading....</h2>
 
     return <>
-    <TopicSelector />
     <h2> Articles by Category</h2>
     <TopicGallery articlesByTopic={articlesByTopic} users={users}/>
     </>

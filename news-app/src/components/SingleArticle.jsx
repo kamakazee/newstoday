@@ -30,7 +30,6 @@ const SingleArticle = ({users, user})=>{
 
     if(isLoading) return <p>Loading....</p>
     return <>
-    <TopicSelector />
     <div className="article-header">
 
         <h2 className="article-title">Title: {article.title}</h2>

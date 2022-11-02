@@ -20,9 +20,9 @@ const TopicSelector = ()=>{
 
     if (isLoading) return <p>Loading....</p>
 
-    return <><p>Jump to:</p>
-    <ul>
-    <Link to={`/`}><li className="topicmenu">Home </li></Link>
+    return <><h2>Jump to:</h2>
+    <ul className="topic-selector">
+    <Link to={`/`}><li>Home </li></Link>
     {topics.map((topic, index)=>{
         return <TopicMenuItem key={index} topic={topic.slug}/>
     })}

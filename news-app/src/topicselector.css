@@ -1,0 +1,16 @@
+
+.topic-selector li{
+
+    list-style: none;
+    display: inline;
+    font-size: 25px;
+
+}
+
+
+.topic-selector li:hover{
+
+    background-color: rgb(108, 226, 167);
+
+}
+

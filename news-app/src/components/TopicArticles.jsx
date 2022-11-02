@@ -31,7 +31,6 @@ const TopicArticles = ()=>{
     if (isLoading) return <p>Loading....</p>
 
     return( <>
-     <TopicSelector />
     <h2>{topic} Articles</h2>
     {articles.map((article, index)=>{
 

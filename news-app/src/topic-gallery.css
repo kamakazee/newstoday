@@ -32,6 +32,10 @@
   
   }
 
+  .topic-gallery h2:hover {
+    background-color: rgb(108, 226, 167);
+  }
+
 .topic-gallery-item {
     margin-left: auto;
     margin-right: auto;

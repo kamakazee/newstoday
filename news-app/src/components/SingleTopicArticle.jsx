@@ -14,6 +14,7 @@ const SingleArticleByTopicItem = ({article, img_url})=>{
     <p className="topicarticle">By: {article.author}</p>
     <p className="topicarticle">Comments: {article.comment_count}</p>
     <p className="topicarticle">Likes: {likes}</p>
+    <p className="topicarticle">Created at: {article.created_at.slice(0,10)}</p>
     
     <LikeButton article={article} setLikes={setLikes}/>
 

@@ -44,6 +44,7 @@ const SingleArticle = ({users, user})=>{
        
     </div>
     <article className="article-body">
+    <h3 className="article-title">Posted on: {article.created_at.slice(0,10)}</h3>
         <LikeButton article={article} setLikes={setLikes}/>
         <p>{article.body} </p>
     </article>

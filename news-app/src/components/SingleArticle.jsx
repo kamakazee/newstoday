@@ -14,6 +14,7 @@ const SingleArticle = ({users, user})=>{
     const [isLoading, setLoading] = useState(true)
     const [author, setAuthor] = useState({})
     const [likes, setLikes] = useState(0)
+    const [comments, setComments] = useState([])
 
     useEffect(()=>{
         setLoading(true)
@@ -47,9 +48,9 @@ const SingleArticle = ({users, user})=>{
         <LikeButton article={article} setLikes={setLikes}/>
         <p>{article.body} </p>
     </article>
-    <CommentForm user={user}/>
+    <CommentForm user={user} articleId={articleId} setComments={setComments}/>
     <h2>Discussion</h2>
-    <CommentsList articleId={articleId.article_id} users={users}/>
+    <CommentsList articleId={articleId.article_id} users={users} comments={comments} setComments={setComments}/>
     </>
     
 }

@@ -3,20 +3,53 @@ import * as API from '../API.js'
 import HeaderProfile from "./HeaderProfile";
 
 
-const CommentForm = ({user})=>{
+const CommentForm = ({user, articleId, setComments})=>{
 
     const [commentInput, setCommentInput]=useState("")
+    const [postText, setPostText] = useState("Post")
 
     const handleSubmit = (event)=>{
-        event.preventDefault()
 
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '-' +  mm + '-' + dd;
+       
+
+        let newComment={
+            created_at: today,
+            body: commentInput,
+            author: user.username,
+            votes:0
+        }
+
+        setComments((currentComments)=>{
+            let newComments = [...currentComments]
+            newComments.unshift(newComment)
+            return newComments
+        })
+
+        event.preventDefault()
+        const comment = {username: user.username, body: commentInput}
+        API.postCommentByArticleId(articleId.article_id, comment).then((comment)=>{
+           
+        }).catch((err)=>{
+                setComments((currentComments)=>{
+                let newComments = [...currentComments]
+                newComments.shift()
+                return newComments
+            })
+    
+
+        })
+
+        setCommentInput("")
     }
 
     const handleInput = (event)=>{
 
         setCommentInput(event.target.value)
-        console.log(commentInput)
-
     }
 
 
@@ -35,7 +68,7 @@ const CommentForm = ({user})=>{
         }} name="comment" form="usrform"></textarea>
         <button type="submit" onClick={(event)=>{
             handleSubmit(event)
-        }}>Post Comment</button>
+        }}>{postText}</button>
     </form>
       </article>
     

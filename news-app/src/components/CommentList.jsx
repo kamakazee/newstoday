@@ -3,7 +3,7 @@ import * as API from '../API.js'
 import CommentItem from "./CommentItem.jsx"
 
 
-const CommentList = ({articleId, users, comments, setComments})=>{
+const CommentList = ({articleId, users, comments, setComments, user})=>{
 
     const [isLoading, setLoading] = useState(true)
     const [isHidden, setHidden] = useState(true)
@@ -35,7 +35,7 @@ const CommentList = ({articleId, users, comments, setComments})=>{
                 commentAuthor=user
             }
         })
-           return <CommentItem key={index} commentAuthor={commentAuthor} comment={comment}/>
+           return <CommentItem key={index} commentAuthor={commentAuthor} comment={comment} user={user}/>
     })}</>)
 
 }

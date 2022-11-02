@@ -66,3 +66,11 @@ const myApi = axios.create({
     });
   };
 
+  export const deleteCommentById = (commentId) => {
+    return myApi.get(`/comments/${commentId}`).then(({data}) => {
+        const {comment} = data;
+      return comment;
+    });
+  };
+
+

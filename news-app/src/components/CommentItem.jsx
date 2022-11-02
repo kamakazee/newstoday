@@ -1,6 +1,7 @@
 import HeaderProfile from "./HeaderProfile";
+import * as API from '../API.js'
 
-const CommentItem = ({ comment, commentAuthor }) => {
+const CommentItem = ({ comment, commentAuthor, user}) => {
   return (
     <>
       <div className="comment-header">

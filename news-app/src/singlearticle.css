@@ -1,35 +1,45 @@
 .article-header{
     border: solid 1px black;
     margin-top:20px;
-
     min-width:500px;
     padding: 20px;
-    max-width:1200px;
+    max-width:1000px;
     gap:100px;
-    background-color:rgb(171, 234, 188);
-    border-radius: 25px;
+    background-color:rgb(125, 125, 220);
     margin: auto;
     margin-top:20px;
+    border-bottom:none;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
 }
 
 .article-author {
     display:inline-block;
-    border-radius: 25px;
+
     width: 200px;
-    background-color: rgb(190, 172, 175);
+    background-color: rgb(251, 135, 135);
 }
 
 .article-body {
     min-width:500px;
-    max-width:1200px;
+    max-width:1000px;
     border: solid 1px black;
     text-align:left;
-    padding: 30px;
+    padding: 100px;
     margin: auto;
-
-    border-radius:25px;
-    margin-top:20px;
+    border-top:none;
+    background-color: rgb(126, 183, 223);
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px;
+    font-family:'Courier New', Courier, monospace;
 }
+
+.article-body p {
+    background-color: white;
+    padding:30px;
+
+}
+
 
 .article-title {
     width:300px;

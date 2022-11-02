@@ -3,9 +3,8 @@ import * as API from '../API.js'
 import CommentItem from "./CommentItem.jsx"
 
 
-const CommentList = ({articleId, users})=>{
+const CommentList = ({articleId, users, comments, setComments})=>{
 
-    const [comments, setComments] = useState([])
     const [isLoading, setLoading] = useState(true)
     const [isHidden, setHidden] = useState(true)
 

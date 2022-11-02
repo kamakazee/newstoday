@@ -5,13 +5,13 @@ const ArticlesByTopic = ({articles, users})=>{
 
     return <div >
     {articles.map((article, index)=>{
-        let img_url = ""
+        let author = {}
         users.forEach((user)=>{
             if (user.username===article.author){
-                img_url=user.avatar_url
+                author=user
             }
         })
-        return <ArticlesByTopicListItem img_url={img_url} key={index} article={article}/>
+        return <ArticlesByTopicListItem author={author} key={index} article={article}/>
     })}
 
     </div>

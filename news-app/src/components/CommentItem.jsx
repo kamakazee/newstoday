@@ -1,7 +1,17 @@
 import HeaderProfile from "./HeaderProfile";
 import * as API from '../API.js'
+import DeleteButton from "./DeleteButton";
+import { useEffect, useState } from "react";
 
 const CommentItem = ({ comment, commentAuthor, user}) => {
+
+  const [isButtonHidden, setButtonHidden] = useState(true)
+
+  useEffect(()=>{
+    user.username === commentAuthor.username ? setButtonHidden(false) : setButtonHidden(true)
+  },[])
+
+
   return (
     <>
       <div className="comment-header">
@@ -14,7 +24,9 @@ const CommentItem = ({ comment, commentAuthor, user}) => {
       </div>
       <article className="comment-body">
         <p>{comment.body}</p>
+        {isButtonHidden ? <></>: <DeleteButton/>}
       </article>
+      
     </>
   );
 };

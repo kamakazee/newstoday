@@ -52,7 +52,7 @@ const myApi = axios.create({
 
   export const postCommentByArticleId = (articleId, comment) => {
     console.log("comment object", comment)
-    return myApi.post(`/articles/${articleId}/comment`, comment).then(({data}) => {
+    return myApi.post(`/articles/${articleId}/comment .`, comment).then(({data}) => {
       console.log(data)
         const {comment} = data;
       return comment;

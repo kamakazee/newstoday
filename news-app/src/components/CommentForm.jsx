@@ -33,15 +33,18 @@ const CommentForm = ({user, articleId, setComments})=>{
         event.preventDefault()
         const comment = {username: user.username, body: commentInput}
         API.postCommentByArticleId(articleId.article_id, comment).then((comment)=>{
+
+            setPostText("POST")
            
         }).catch((err)=>{
+
+                setPostText("Function unavailable")
+
                 setComments((currentComments)=>{
                 let newComments = [...currentComments]
                 newComments.shift()
                 return newComments
             })
-    
-
         })
 
         setCommentInput("")

@@ -6,15 +6,12 @@ const Sort = ({articleProperties, setArticles, topic, orderBy})=>{
     const [sortBy, setSortBy]= useState("created_at")
     const [order, setOrderBy]= useState("ascending")
 
-    console.log(articleProperties)
-
     const submitSortBy = (event)=>{
 
         setSortBy(event.target.value)
 
-        console.log(event.target.value)
         API.fetchSortedArticles(event.target.value, topic, order).then((articles)=>{
-            console.log(articles)
+
             setArticles(articles)
         })
        
@@ -24,12 +21,10 @@ const Sort = ({articleProperties, setArticles, topic, orderBy})=>{
 
         setOrderBy(event.target.value)
 
-        console.log(event.target.value)
         API.fetchSortedArticles(sortBy, topic, event.target.value).then((articles)=>{
-            console.log(articles)
+            
             setArticles(articles)
         })
-       
     }
 
 

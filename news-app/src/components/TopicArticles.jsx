@@ -15,9 +15,6 @@ const TopicArticles = ()=>{
     const [users, setUsers] = useState([])
 
     useEffect(()=>{
-
-        console.log("useEffect ran")
-
         setLoading(true)
 
         API.fetchArticlesByTopic(topic).then((articles)=>{
@@ -31,12 +28,12 @@ const TopicArticles = ()=>{
     }, [topic])
 
     const sortableProperties = ["created_at", "votes", "title", "topic", "author", "comment_count"]
-    const orderBy = ["ascending", "descending"]
+    const orderBy = ["descending", "ascending"]
 
 
     if (isLoading) return <p>Loading....</p>
 
-    return( <>{console.log("Re-rendering", articles)}
+    return( <>
     <h2>{topic} Articles</h2>
     
     <Sort articleProperties={sortableProperties} setArticles={setArticles} topic={topic} orderBy={orderBy}/>

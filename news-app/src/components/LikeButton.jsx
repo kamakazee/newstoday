@@ -1,5 +1,5 @@
 import * as API from '../API.js'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 const LikeButton = ({article, setLikes})=>{
@@ -8,8 +8,6 @@ const LikeButton = ({article, setLikes})=>{
 
     const updateLikes = (vote, article_id)=>{
         API.updateVotesByArticleId(vote, article_id).then((article)=>{
-
-            console.log("Update complete", article)
             
         }).catch((err)=>{
             setLikes((currentLikes)=>{
@@ -19,22 +17,26 @@ const LikeButton = ({article, setLikes})=>{
         })
     }
 
-
     const handleClick = (event)=>{
-        setLikeText((currentText)=>{
-            if (currentText==="Like"){
 
-                setLikes((currentLikes)=>{
-                    updateLikes(1, article.article_id)
-                    return currentLikes + 1
-                })
-                return "Unlike"
-            } 
-            updateLikes(-1, article.article_id)
-
+        if(likeText==="Like"){
             setLikes((currentLikes)=>{
+                updateLikes(1, article.article_id)
+                return currentLikes + 1
+            })
+        }else{
+            setLikes((currentLikes)=>{
+                updateLikes(-1, article.article_id)
                 return currentLikes - 1
             })
+        }
+
+        setLikeText((currentText)=>{
+            if (currentText==="Like"){
+                
+                return "Unlike"
+            } 
+
             return "Like"
         })
     }

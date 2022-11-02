@@ -1,15 +1,14 @@
 import { useState } from "react"
-import FormMessage from "./FormMessage"
 
-const FormValidation = ()=>{
-    const [validateMessages, setValidateMessages] = useState([])
+const FormValidation = ({validateMsgIsHidden, validateMessage})=>{
 
+    
 
-    let message="Nothing"
+    let message="Message Posted Successfully"
 
+    return <p className="postMessage">{validateMsgIsHidden? "" : validateMessage}</p>
 
-
-    return <FormMessage message={message} />
+    
 }
 
 export default FormValidation

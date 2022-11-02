@@ -8,8 +8,12 @@ const CommentForm = ({user, articleId, setComments})=>{
 
     const [commentInput, setCommentInput]=useState("")
     const [postText, setPostText] = useState("Post")
+    const [validateMsgIsHidden, setValidateMsgHidden] = useState(true)
+    const [validateMessage, setValidateMessages] = useState("Message Posted Successfully")
 
     const handleSubmit = (event)=>{
+
+        setValidateMsgHidden(true)
 
         let today = new Date();
         const dd = String(today.getDate()).padStart(2, '0');
@@ -36,8 +40,12 @@ const CommentForm = ({user, articleId, setComments})=>{
         API.postCommentByArticleId(articleId.article_id, comment).then((comment)=>{
 
             setPostText("POST")
+            setValidateMsgHidden(false)
            
         }).catch((err)=>{
+
+                setValidateMessages("Unable to post comment, please try later")
+                setValidateMsgHidden(false)
 
                 setPostText("Function unavailable")
 
@@ -60,7 +68,7 @@ const CommentForm = ({user, articleId, setComments})=>{
     return <>
 
        <div className="commentform-header">
-            <FormValidation/>
+            <FormValidation validateMsgIsHidden={validateMsgIsHidden} validateMessage={validateMessage}/>
             <div className="commentform-author">
             <HeaderProfile user={user} />
             </div>

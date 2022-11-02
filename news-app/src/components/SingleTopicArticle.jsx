@@ -8,12 +8,13 @@ const SingleArticleByTopicItem = ({article, img_url})=>{
 
     const [likes, setLikes] = useState(article.votes)
 
-    const articleProperties = Object.keys(article)
+    useEffect(()=>{
 
+        setLikes(article.votes)
+
+    },[article])
   
     return <>
-
-   
     
     <div className="article-item">
         

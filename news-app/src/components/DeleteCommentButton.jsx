@@ -43,9 +43,15 @@ const DeleteCommentButton = ({comment,setComments})=>{
     setConfirmHidden(false)
   }
 
-  const handleConfirmClick = ()=>{
+  const handleConfirmClick = (isTrue)=>{
+
+    if(isTrue){
     setConfirmHidden(true)
-    deleteComment()
+    deleteComment()}
+    else{
+
+      setConfirmHidden(true)
+    }
 
   }
 

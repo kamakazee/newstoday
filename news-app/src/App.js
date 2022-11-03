@@ -16,6 +16,7 @@ import HomePage from './components/HomePage';
 import SingleArticle from './components/SingleArticle';
 import TopicArticles from './components/TopicArticles';
 import TopicSelector from './components/TopicSelector';
+import My404Component from './components/My404Component';
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
         <Route path="/article/:article_id" element={<SingleArticle user={user} users={users}/>}/>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/articles/topic/:topic" element={<TopicArticles/>}/>
+        <Route path="*" element={<My404Component/>} />
       </Routes>
  
     </div>

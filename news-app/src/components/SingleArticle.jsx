@@ -6,6 +6,7 @@ import TopicSelector from "./TopicSelector.jsx"
 import CommentForm from "./CommentForm.jsx"
 import CommentsList from "./CommentList.jsx"
 import LikeButton from "./LikeButton.jsx"
+import Error from "./Error.jsx"
 
 const SingleArticle = ({users, user})=>{
 
@@ -15,6 +16,7 @@ const SingleArticle = ({users, user})=>{
     const [author, setAuthor] = useState({})
     const [likes, setLikes] = useState(0)
     const [comments, setComments] = useState([])
+    const [err, setError] = useState(null)
 
     useEffect(()=>{
         setLoading(true)
@@ -25,10 +27,14 @@ const SingleArticle = ({users, user})=>{
                 setAuthor(author)
                 setLoading(false)
             })
+        }).catch(({response:{data}})=>{
+            console.log("Error response from server", data)
+            setError(data)
         })
     }, [])
 
     if(isLoading) return <p>Loading....</p>
+    if (err) return <Error status={err.status} message={err.message}/>
     return <>
     <div className="article-header">
 

@@ -1,8 +1,8 @@
 const Error = ({status, message})=>{
 
     return <>
-    <p>Status: {status}</p>
-    <p>Sorry there was an error: {message}</p>
+    <h2>Status: {status}</h2>
+    <h2>Sorry there was an error: {message}</h2>
     
     </>
 }

@@ -30,6 +30,7 @@ const SingleArticle = ({users, user})=>{
         }).catch(({response:{data}})=>{
             console.log("Error response from server", data)
             setError(data)
+            setLoading(false)
         })
     }, [])
 

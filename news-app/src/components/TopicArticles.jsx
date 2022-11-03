@@ -4,6 +4,7 @@ import * as API from '../API.js'
 import SingleTopicArticle from "./SingleTopicArticle.jsx"
 import TopicSelector from "./TopicSelector.jsx"
 import Sort from "./Sort.jsx"
+import Error from "./Error.jsx"
 
 
 const TopicArticles = ()=>{
@@ -13,6 +14,7 @@ const TopicArticles = ()=>{
     const [articles, setArticles] = useState([])
     const [isLoading, setLoading] = useState(true)
     const [users, setUsers] = useState([])
+    const [err, setError] = useState(null)
 
     useEffect(()=>{
         setLoading(true)
@@ -23,6 +25,10 @@ const TopicArticles = ()=>{
                 setUsers(users)
                 setLoading(false)
             })
+        }).catch(({response:{data}})=>{
+            console.log(data)
+            setError(data)
+            setLoading(false)
         })
 
     }, [topic])
@@ -32,6 +38,7 @@ const TopicArticles = ()=>{
 
 
     if (isLoading) return <p>Loading....</p>
+    if (err) return <Error status={err.status} message={err.message}/>
 
     return( <>
     <h2>{topic} Articles</h2>

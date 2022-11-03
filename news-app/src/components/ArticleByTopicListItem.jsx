@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom"
+import HeaderProfile from "./HeaderProfile"
 
-const ArticlesByTopicListItem = ({article})=>{
+const ArticlesByTopicListItem = ({article, author})=>{
 
 
 
     return <div className="topic-gallery-item">
-    <Link to={`/article/${article.article_id}`}><p className="article-label">{article.title}</p></Link>
-    <p className="article-label">{article.author}</p>
-
+         <HeaderProfile user={author}/>
+    <Link to={`/article/${article.article_id}`}>
+        <div className="article-label">
+            <p>{article.title}</p>
+        </div>
+    </Link>
+   
     </div>
 
 }

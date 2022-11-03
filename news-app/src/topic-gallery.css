@@ -7,6 +7,7 @@
   max-width: 1200px;
   justify-content: center;
 
+
 }
 
 .articles-list {
@@ -15,11 +16,11 @@
 }
 
 .category-label {
-  background-color: rgb(190, 190, 210);
+  font-size:40px;
   padding: 20px;
-  border-radius:25px;
-  width: 300px;
+  width: 350px;
   margin: auto;
+  text-decoration: underline;
 }
 
 .topic-gallery {
@@ -31,15 +32,19 @@
   
   }
 
+  .topic-gallery h2:hover {
+    background-color: rgb(108, 226, 167);
+  }
+
 .topic-gallery-item {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    width: 300px;
+    margin-top: 10px;
+    width: 350px;
     border: solid 1px black;
     border-radius:25px;
-    background-color: rgb(174, 216, 247);
-    display:flex;
+ 
+    padding:30px;
 }
   
 
@@ -52,7 +57,21 @@
   min-width: 500px;
 }
 
-.article-label {
-  margin: 10px;
+.article-label p:hover{
+  background-color: rgb(108, 226, 167);
 }
 
+
+
+.article-label {
+  all: unset;
+  margin: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+}
+
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
+}

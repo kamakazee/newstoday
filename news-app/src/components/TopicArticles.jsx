@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import * as API from '../API.js'
 import SingleTopicArticle from "./SingleTopicArticle.jsx"
 import TopicSelector from "./TopicSelector.jsx"
+import Sort from "./Sort.jsx"
 
 
 const TopicArticles = ()=>{
@@ -14,7 +15,6 @@ const TopicArticles = ()=>{
     const [users, setUsers] = useState([])
 
     useEffect(()=>{
-
         setLoading(true)
 
         API.fetchArticlesByTopic(topic).then((articles)=>{
@@ -27,12 +27,17 @@ const TopicArticles = ()=>{
 
     }, [topic])
 
+    const sortableProperties = ["created_at", "votes", "title", "topic", "author", "comment_count"]
+    const orderBy = ["descending", "ascending"]
+
 
     if (isLoading) return <p>Loading....</p>
 
     return( <>
-     <TopicSelector />
     <h2>{topic} Articles</h2>
+    
+    <Sort articleProperties={sortableProperties} setArticles={setArticles} topic={topic} orderBy={orderBy}/>
+
     {articles.map((article, index)=>{
 
         let img_url = ""

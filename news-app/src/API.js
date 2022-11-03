@@ -51,7 +51,7 @@ const myApi = axios.create({
 
 
   export const postCommentByArticleId = (articleId, comment) => {
-    return myApi.post(`/articles/${articleId}/commen`, comment).then(({data}) => {
+    return myApi.post(`/articles/${articleId}/comment`, comment).then(({data}) => {
         const {comment} = data;
       return comment;
     });
@@ -65,4 +65,18 @@ const myApi = axios.create({
       return comments;
     });
   };
+
+
+  export const fetchSortedArticles = (property, topic, order) => {
+
+    let orderBy =""
+
+    order==="ascending" ? orderBy="ASC" : orderBy="DESC"
+
+    return myApi.get(`/articles?sort_by=${property}&&topic=${topic}&&order=${orderBy}`).then(({data}) => {
+        const {articles} = data;
+      return articles;
+    });
+  };
+
 

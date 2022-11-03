@@ -41,7 +41,7 @@ const LikeButton = ({article, setLikes})=>{
         })
     }
 
-    return  <button onClick={()=>{
+    return  <button className="like" onClick={()=>{
         handleClick()
     }}>{likeText}</button>
 

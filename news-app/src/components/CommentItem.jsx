@@ -1,6 +1,18 @@
 import HeaderProfile from "./HeaderProfile";
 
-const CommentItem = ({ comment, commentAuthor }) => {
+import DeleteCommentButton from "./DeleteCommentButton";
+import { useEffect, useState } from "react";
+
+const CommentItem = ({ comment, commentAuthor, user, setComments, comments}) => {
+
+  const [isButtonHidden, setButtonHidden] = useState(true)
+
+  useEffect(()=>{
+    user.username === commentAuthor.username ? setButtonHidden(false) : setButtonHidden(true)
+  },[comments])
+
+
+
   return (
     <>
       <div className="comment-header">
@@ -13,7 +25,9 @@ const CommentItem = ({ comment, commentAuthor }) => {
       </div>
       <article className="comment-body">
         <p>{comment.body}</p>
+        {isButtonHidden ? <></>: <DeleteCommentButton setComments={setComments} comment={comment}/>}
       </article>
+      
     </>
   );
 };

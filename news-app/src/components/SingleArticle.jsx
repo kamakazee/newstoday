@@ -57,7 +57,7 @@ const SingleArticle = ({users, user})=>{
     </article>
     <CommentForm user={user} articleId={articleId} setComments={setComments}/>
     <h2>Discussion</h2>
-    <CommentsList articleId={articleId.article_id} users={users} comments={comments} setComments={setComments}/>
+    <CommentsList articleId={articleId.article_id} users={users} comments={comments} setComments={setComments} user={user}/>
     </>
     
 }

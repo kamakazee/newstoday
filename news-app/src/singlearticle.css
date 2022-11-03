@@ -1,10 +1,11 @@
 .article-header{
+    width:50%;
     border: solid 1px black;
     margin-top:20px;
     min-width:500px;
-    padding: 20px;
     max-width:1000px;
     gap:100px;
+    padding: 20px;
     background-color:rgb(125, 125, 220);
     margin: auto;
     margin-top:20px;
@@ -21,11 +22,12 @@
 }
 
 .article-body {
+    width:50%;
     min-width:500px;
     max-width:1000px;
     border: solid 1px black;
     text-align:left;
-    padding: 100px;
+    padding: 20px;
     margin: auto;
     border-top:none;
     background-color: rgb(126, 183, 223);
@@ -43,9 +45,17 @@
 
 .article-title {
     width:300px;
+    
 }
 
 .article-header h2{
+
+    display: inline-block;
+    margin:40px;
+  
+}
+
+.article-header h3{
 
     display: inline-block;
     margin:40px;

@@ -1,5 +1,37 @@
 .confirmbox {
-    width: 300px;
-    height:50px;
-    background-color: red;
+    width: 80%;
+    height:100%;
+    padding:20px;
+    background-color: rgb(231, 17, 17);
+    border-radius:25px;
+}
+
+
+.delete {
+    margin:20px;
+    padding:10px;
+    width:100px;
+    font-size:15px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.delete:hover {
+    background-color: rgb(188, 34, 126);
+    color: white;
+}
+
+.confirm {
+    display:inline;
+    margin:20px;
+    padding:10px;
+    width:100px;
+    font-size:15px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.confirm:hover {
+    background-color: rgb(188, 34, 126);
+    color: white;
 }

@@ -39,8 +39,16 @@ const CommentForm = ({user, articleId, setComments})=>{
         const comment = {username: user.username, body: commentInput}
         API.postCommentByArticleId(articleId.article_id, comment).then((comment)=>{
 
+            setComments((currentComments)=>{
+                let newComments = [...currentComments]
+                newComments[0]={...comment}
+                return newComments
+            })
+    
+
             setPostText("POST")
             setValidateMsgHidden(false)
+
            
         }).catch((err)=>{
 

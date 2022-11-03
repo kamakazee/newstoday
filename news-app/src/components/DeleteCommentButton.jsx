@@ -55,7 +55,7 @@ const DeleteCommentButton = ({comment,setComments})=>{
 
   }
 
-    if (isConfirmHidden) return <><button onClick={handleDeleteClick}>Delete</button>
+    if (isConfirmHidden) return <><button className="delete" onClick={handleDeleteClick}>Delete</button>
     {isFailMessageHidden ? <></> : <DeleteFailMessage/> }
     </>
 

@@ -67,9 +67,23 @@ const myApi = axios.create({
   };
 
   export const deleteCommentById = (commentId) => {
+    console.log(commentId)
     return myApi.delete(`/comments/${commentId}`).then(({data}) => {
         const {comment} = data;
       return comment;
+    
+    })
+  }
+
+  export const fetchSortedArticles = (property, topic, order) => {
+
+    let orderBy =""
+
+    order==="ascending" ? orderBy="ASC" : orderBy="DESC"
+
+    return myApi.get(`/articles?sort_by=${property}&&topic=${topic}&&order=${orderBy}`).then(({data}) => {
+        const {articles} = data;
+      return articles;
     });
   };
 

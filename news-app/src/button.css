@@ -1,0 +1,27 @@
+.like {
+    margin:20px;
+    padding:20px;
+    width:150px;
+    font-size:25px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.like:hover {
+    background-color: rgb(73, 126, 186);
+    color: white;
+}
+
+
+.showhide {
+    margin:20px;
+    padding:20px;
+    width:150px;
+    font-size:25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.showhide:hover {
+    background-color: rgb(73, 126, 186);
+    color: white;
+}

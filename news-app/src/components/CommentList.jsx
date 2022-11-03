@@ -1,31 +1,36 @@
-import { useEffect, useState } from "react"
-import * as API from '../API.js'
-import CommentItem from "./CommentItem.jsx"
+import { useEffect, useState } from "react";
+import * as API from "../API.js";
+import CommentItem from "./CommentItem.jsx";
+
+const CommentList = ({ articleId, users, comments, setComments, user }) => {
 
 
-const CommentList = ({articleId, users, comments, setComments, user})=>{
+  const [isLoading, setLoading] = useState(true);
+  const [isHidden, setHidden] = useState(true);
 
-    const [isLoading, setLoading] = useState(true)
-    const [isHidden, setHidden] = useState(true)
+  useEffect(() => {
+    setLoading(true);
+    API.fetchCommentsByArticleId(articleId).then((comments) => {
+      setComments(comments);
+      setLoading(false);
+    });
+  }, []);
 
-
-    useEffect(()=>{
-        setLoading(true)
-        API.fetchCommentsByArticleId(articleId).then((comments)=>{
-            setComments(comments)
-            setLoading(false)
-           
-        })
-    }, [])
-
-    if(isHidden) return <button onClick={()=>{
-        setHidden(false)
-    }}>Show Comments</button>
+  if (isHidden)
+    return (
+      <button className="showhide"
+        onClick={() => {
+          setHidden(false);
+        }}
+      >
+        Show Comments
+      </button>
+    );
 
     if (isLoading) return <p>Loading......</p>
 
     return (<>
-    <button onClick={()=>{
+    <button className="showhide" onClick={()=>{
         setHidden(true)
     }}>Hide Comments</button>
     {comments.map((comment, index)=>{
@@ -42,3 +47,4 @@ const CommentList = ({articleId, users, comments, setComments, user})=>{
 
 
 export default CommentList
+

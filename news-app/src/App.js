@@ -5,6 +5,7 @@ import './singlearticle.css';
 import './singletopicarticles.css';
 import './commentsform.css';
 import './comment.css';
+import './delete_confirmboxes.css';
 import './topicselector.css';
 import './button.css';
 import './sort.css';

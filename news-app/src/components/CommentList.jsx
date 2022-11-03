@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import * as API from "../API.js";
 import CommentItem from "./CommentItem.jsx";
 
-const CommentList = ({ articleId, users, comments, setComments }) => {
+const CommentList = ({ articleId, users, comments, setComments, user }) => {
+
+
   const [isLoading, setLoading] = useState(true);
   const [isHidden, setHidden] = useState(true);
 
@@ -25,35 +27,24 @@ const CommentList = ({ articleId, users, comments, setComments }) => {
       </button>
     );
 
-  if (isLoading) return <p>Loading......</p>;
+    if (isLoading) return <p>Loading......</p>
 
-  return (
-    <>
-      <button
-        className="showhide"
-        onClick={() => {
-          setHidden(true);
-        }}
-      >
-        Hide Comments
-      </button>
-      {comments.map((comment, index) => {
-        let commentAuthor = {};
-        users.forEach((user) => {
-          if (user.username === comment.author) {
-            commentAuthor = user;
-          }
-        });
-        return (
-          <CommentItem
-            key={index}
-            commentAuthor={commentAuthor}
-            comment={comment}
-          />
-        );
-      })}
-    </>
-  );
-};
+    return (<>
+    <button className="showhide" onClick={()=>{
+        setHidden(true)
+    }}>Hide Comments</button>
+    {comments.map((comment, index)=>{
+        let commentAuthor = {}
+        users.forEach((user)=>{
+            if (user.username===comment.author){
+                commentAuthor=user
+            }
+        })
+           return <CommentItem key={index} comments={comments} commentAuthor={commentAuthor} comment={comment} user={user} setComments={setComments}/>
+    })}</>)
 
-export default CommentList;
+}
+
+
+export default CommentList
+

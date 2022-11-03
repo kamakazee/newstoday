@@ -66,6 +66,14 @@ const myApi = axios.create({
     });
   };
 
+  export const deleteCommentById = (commentId) => {
+    console.log(commentId)
+    return myApi.delete(`/comments/${commentId}`).then(({data}) => {
+        const {comment} = data;
+      return comment;
+    
+    })
+  }
 
   export const fetchSortedArticles = (property, topic, order) => {
 

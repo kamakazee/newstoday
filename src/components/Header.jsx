@@ -11,7 +11,7 @@ const Header = ({user})=>{
             <HeaderProfile user={user}/>
         </div>
         <div className="title-box">
-            <Link to="/" ><p className="title">newsToday</p></Link>
+            <Link to="/" ><p className="title">news Today</p></Link>
         </div>
     </div>
     )

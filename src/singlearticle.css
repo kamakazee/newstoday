@@ -2,10 +2,10 @@
     width:50%;
     border: solid 1px black;
     margin-top:20px;
-    min-width:500px;
+    min-width:300px;
     max-width:1000px;
     gap:100px;
-    padding: 20px;
+    padding: 10px;
     background-color:rgb(125, 125, 220);
     margin: auto;
     margin-top:20px;
@@ -23,11 +23,11 @@
 
 .article-body {
     width:50%;
-    min-width:500px;
+    min-width:300px;
     max-width:1000px;
     border: solid 1px black;
     text-align:left;
-    padding: 20px;
+    padding: 10px;
     margin: auto;
     border-top:none;
     background-color: rgb(126, 183, 223);
@@ -44,14 +44,14 @@
 
 
 .article-title {
-    width:300px;
+    width:80%;
     
 }
 
 .article-header h2{
 
     display: inline-block;
-    margin:40px;
+    margin:20px;
   
 }
 

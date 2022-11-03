@@ -2,7 +2,7 @@
     width:50%;
   border: solid 1px black;
   margin-top: 20px;
-  min-width: 500px;
+  min-width: 300px;
   padding: 20px;
   max-width: 1000px;
   gap: 100px;
@@ -23,7 +23,7 @@
 
 .comment-body {
     width:50%;
-    min-width:500px;
+    min-width:300px;
     max-width:1000px;
     border: solid 1px black;
     text-align:left;

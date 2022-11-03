@@ -5,6 +5,7 @@ import './singlearticle.css';
 import './singletopicarticles.css';
 import './commentsform.css';
 import './comment.css';
+import './delete_confirmboxes.css';
 import Header from './components/Header';
 import {useState, useEffect} from 'react'
 import * as API from './API.js'

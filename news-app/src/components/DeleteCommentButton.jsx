@@ -1,9 +1,16 @@
 import * as API from '../API.js'
+import ConfirmBox from './ConFirmBox'
+import { useState } from 'react'
+import DeleteFailMessage from './DeleteFailMessage.jsx'
 
 const DeleteCommentButton = ({comment,setComments})=>{
 
 
-  const onClickDelete = ()=>{
+  const [isConfirmHidden, setConfirmHidden] = useState(true)
+  const [isFailMessageHidden, setFailMessageHidden] = useState(true)
+
+
+  const deleteComment = ()=>{
 
     let commentId = comment.comment_id
 
@@ -26,13 +33,28 @@ const DeleteCommentButton = ({comment,setComments})=>{
         return newComments
   
       })
+    }).catch((err)=>{
+      setFailMessageHidden(false)
     })
 
   }
 
+  const handleDeleteClick = ()=>{
+    setConfirmHidden(false)
+  }
 
+  const handleConfirmClick = ()=>{
+    setConfirmHidden(true)
+    deleteComment()
 
-    return <button onClick={onClickDelete}>Delete</button>
+  }
+
+    if (isConfirmHidden) return <><button onClick={handleDeleteClick}>Delete</button>
+    {isFailMessageHidden ? <></> : <DeleteFailMessage/> }
+    </>
+
+    return <> <ConfirmBox setConfirmHidden={setConfirmHidden} handleConfirmClick={handleConfirmClick}/> </>
+
 }
 
 export default DeleteCommentButton

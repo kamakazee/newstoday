@@ -20,6 +20,7 @@
 }
 
 .header {
+    width:80%;
     background-color: rgb(172, 201, 172);
     height: 200px;
     padding: 20px;

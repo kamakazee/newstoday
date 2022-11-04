@@ -9,6 +9,7 @@ import './delete_confirmboxes.css';
 import './topicselector.css';
 import './button.css';
 import './sort.css';
+import './users.css';
 import Header from './components/Header';
 import {useState, useEffect} from 'react'
 import * as API from './API.js'
@@ -18,6 +19,7 @@ import SingleArticle from './components/SingleArticle';
 import TopicArticles from './components/TopicArticles';
 import TopicSelector from './components/TopicSelector';
 import My404Component from './components/My404Component';
+import UserSelect from './components/UserSelect';
 
 function App() {
 
@@ -31,12 +33,16 @@ function App() {
     setLoading(true)
     API.fetchUserByUsername("tickle122").then((user)=>{
       setUser(user)
-      setLoading(false)
+
+      API.fetchUsers().then((currentUsers)=>{
+
+        setUsers(currentUsers)
+        setLoading(false)
+    })
+     
    })
 
-   API.fetchUsers().then((users)=>{
-    setUsers(users)
-})
+   
   }, [])
 
   if (isLoading) return <h2> Loading...</h2>
@@ -45,11 +51,13 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Header user={user}/>
+      <Link to="/users/select" element={<UserSelect />}><h3>Select a different User</h3></Link>
       <TopicSelector />
       <Routes>
         <Route path="/" element={<HomePage users={users}/>}/>
         <Route path="/article/:article_id" element={<SingleArticle user={user} users={users}/>}/>
         <Route path="/articles/topic/:topic" element={<TopicArticles/>}/>
+        <Route path="/users/select" element={<UserSelect users={users} setUser={setUser}/>}/>
         <Route path="*" element={<My404Component/>} />
       </Routes>
  

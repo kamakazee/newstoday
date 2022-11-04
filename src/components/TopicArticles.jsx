@@ -43,7 +43,7 @@ const TopicArticles = ()=>{
     return( <>
     <h2>{topic} Articles</h2>
     
-    <Sort articleProperties={sortableProperties} setArticles={setArticles} topic={topic} orderBy={orderBy}/>
+    <Sort articles={articles} articleProperties={sortableProperties} setArticles={setArticles} topic={topic} orderBy={orderBy}/>
 
     {articles.map((article, index)=>{
 

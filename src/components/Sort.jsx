@@ -1,7 +1,7 @@
 import * as API from '../API.js'
 import { useState } from 'react'
 
-const Sort = ({articleProperties, setArticles, topic, orderBy})=>{
+const Sort = ({articleProperties, setArticles, topic, orderBy, articles})=>{
 
     const [sortBy, setSortBy]= useState("created_at")
     const [order, setOrderBy]= useState("ascending")
@@ -30,27 +30,29 @@ const Sort = ({articleProperties, setArticles, topic, orderBy})=>{
 
 
     return(
+    <>
+        <form className="sortform">
+            <div>
+            <label><p>Sort articles by:</p></label>
+                <select className="sortoptions" onChange={(event) => submitSortBy(event)}>
+                    {articleProperties.map((property, index)=>{
+                        return <option key={index} value={property}>{property}</option>
 
-    <form className="sortform">
-        <div>
-        <label><p>Sort articles by:</p></label>
-            <select className="sortoptions" onChange={(event) => submitSortBy(event)}>
-                {articleProperties.map((property, index)=>{
-                    return <option key={index} value={property}>{property}</option>
+                    })}
+                </select>
+            </div>
+            <div>
+                <label><p>Order by:</p></label>
+                <select className="sortoptions" onChange={(event) => submitOrderBy(event)}>
+                    {orderBy.map((property, index)=>{
+                        return <option key={index} value={property}>{property}</option>
 
-                })}
-            </select>
-        </div>
-        <div>
-            <label><p>Order by:</p></label>
-            <select className="sortoptions" onChange={(event) => submitOrderBy(event)}>
-                {orderBy.map((property, index)=>{
-                    return <option key={index} value={property}>{property}</option>
-
-                })}
-            </select>
-        </div>
-    </form>
+                    })}
+                </select>
+            </div>
+        </form>
+        <p>Articles: {articles.length}</p>
+    </>
     )
 
 }

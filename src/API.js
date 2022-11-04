@@ -95,3 +95,15 @@ const myApi = axios.create({
   };
 
 
+  export const postArticle = (article) => {
+    return myApi.post(`/articles`, article).then(({data}) => {
+        const {article} = data;
+      return article;
+    });
+  };
+
+
+
+
+
+

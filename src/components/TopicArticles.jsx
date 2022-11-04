@@ -5,9 +5,10 @@ import SingleTopicArticle from "./SingleTopicArticle.jsx"
 import TopicSelector from "./TopicSelector.jsx"
 import Sort from "./Sort.jsx"
 import Error from "./Error.jsx"
+import ArticleForm from "./ArticleForm.jsx"
 
 
-const TopicArticles = ()=>{
+const TopicArticles = ({user})=>{
 
     const {topic} = useParams()
 
@@ -44,6 +45,7 @@ const TopicArticles = ()=>{
     <h2>{topic} Articles</h2>
     
     <Sort articles={articles} articleProperties={sortableProperties} setArticles={setArticles} topic={topic} orderBy={orderBy}/>
+    <ArticleForm user={user} setArticles={setArticles} topic={topic}/>
 
     {articles.map((article, index)=>{
 

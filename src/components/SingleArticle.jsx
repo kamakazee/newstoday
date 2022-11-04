@@ -39,7 +39,7 @@ const SingleArticle = ({users, user})=>{
     <div className="article-header">
 
         <h4 className="article-title">Title: {article.title}</h4>
-        <p >Comments: {article.comment_count}</p>
+        <p >Comments: {comments.length}</p>
         <p> Likes: {likes}</p>
 
 

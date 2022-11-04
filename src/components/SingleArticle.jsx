@@ -39,9 +39,9 @@ const SingleArticle = ({users, user})=>{
     return <>
     <div className="article-header">
 
-        <h2 className="article-title">Title: {article.title}</h2>
-        <h3 >Comments: <br/>{article.comment_count}
-        <hr/> Likes: <br/>{likes}</h3>
+        <h4 className="article-title">Title: {article.title}</h4>
+        <p >Comments: {article.comment_count}</p>
+        <p> Likes: {likes}</p>
 
 
        <div className="article-author">
@@ -51,7 +51,7 @@ const SingleArticle = ({users, user})=>{
        
     </div>
     <article className="article-body">
-    <h3 className="article-title">Posted on: {article.created_at.slice(0,10)}</h3>
+    <h4 className="article-title">Posted on: {article.created_at.slice(0,10)}</h4>
         <LikeButton article={article} setLikes={setLikes}/>
         <p>{article.body} </p>
     </article>

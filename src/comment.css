@@ -1,14 +1,13 @@
 .comment-header {
     width:50%;
   border: solid 1px black;
-  margin-top: 20px;
   min-width: 300px;
-  padding: 20px;
+  padding: 10px;
   max-width: 1000px;
   gap: 100px;
   background-color: rgb(219, 222, 129);
   margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   border-bottom: none;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
@@ -27,7 +26,7 @@
     max-width:1000px;
     border: solid 1px black;
     text-align:left;
-    padding: 20px;
+    padding: 10px;
     margin: auto;
     border-top:none;
     background-color: rgb(131, 177, 114);
@@ -38,6 +37,14 @@
 
 .comment-body p {
     background-color: white;
-    padding:30px;
+    padding:10px;
 
+}
+
+.comment-header p{
+    display:inline-block;
+    margin:5px;
+    padding:2px;
+    font-family: 'Courier New', Courier, monospace;
+    
 }

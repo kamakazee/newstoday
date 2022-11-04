@@ -49,7 +49,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage users={users}/>}/>
         <Route path="/article/:article_id" element={<SingleArticle user={user} users={users}/>}/>
-        <Route path="/" element={<HomePage/>}/>
         <Route path="/articles/topic/:topic" element={<TopicArticles/>}/>
         <Route path="*" element={<My404Component/>} />
       </Routes>

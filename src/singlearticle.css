@@ -1,11 +1,11 @@
 .article-header{
     width:50%;
     border: solid 1px black;
-    margin-top:20px;
+    margin-top:5px;
     min-width:300px;
     max-width:1000px;
     gap:100px;
-    padding: 10px;
+    padding: 5px;
     background-color:rgb(125, 125, 220);
     margin: auto;
     margin-top:20px;
@@ -38,7 +38,7 @@
 
 .article-body p {
     background-color: white;
-    padding:30px;
+    padding:10px;
 
 }
 
@@ -51,14 +51,21 @@
 .article-header h2{
 
     display: inline-block;
-    margin:20px;
+    margin:10px;
   
 }
 
-.article-header h3{
+.article-header h4{
 
     display: inline-block;
-    margin:40px;
+    margin:10px;
+  
+}
+
+.article-header p{
+
+    display: inline-block;
+    margin:10px;
   
 }
 

@@ -16,8 +16,8 @@ const CommentItem = ({ comment, commentAuthor, user, setComments, comments}) => 
   return (
     <>
       <div className="comment-header">
-        <h2 >Created on: <br/>{comment.created_at.slice(0,10)}</h2>
-        <h2> Likes: <br/>{comment.votes}</h2>
+        <p >Created on: {comment.created_at.slice(0,10)}</p>
+        <p> Likes: {comment.votes}</p>
 
         <div className="comment-author">
           <HeaderProfile user={commentAuthor} />

@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# newsToday - Portfolio APP built with ReactJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with Create React App.
 
-## Available Scripts
+This application presents as a source of news articles to users. Logged in users can 
 
-In the project directory, you can run:
+- search for articles to read
+- post and delete comments on articles
+- like articles and comments
 
-### `npm start`
+A hosted version of this APP can be found at the following location: [https://peaceful-creponne-ca806a.netlify.app/users/select](https://peaceful-creponne-ca806a.netlify.app/users/select) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This forms part of my portfolio of app development projects, this was created during a full stack bootcamp at Northcoders.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Project dependencies
 
-### `npm test`
+Minimumum versions of following modules required for this repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js v18
 
-### `npm run build`
+To install required dependencies run the following command in the terminal
+```
+npm install 
+```
+# Set up instructins
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once the repository has been forked and cloned, the following command will run a local instance of the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm start 
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Backend
 
-### `npm run eject`
+The API used throughout this frontend was developed in `Node` as a backend portfolio project, the repository can be found at the following location: [https://github.com/kamakazee/news-worthy](https://github.com/kamakazee/news-worthy) 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Frontend Functionality
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+This frontend has the following functionality
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### - Select from a selection of users to act as the logged in user
+#### - The homepage presents a simiplified display of all article details
+#### - Visibile navigation bar, utilising `Links` as part of `react router`
+#### - `Routes` used to provide unique `url` adressing functionality to articles
+#### - Articles are sortable by properties and results can be ordered ascending or descending
+#### - Articles can be `liked` by the logged in user
+#### - Comments linked to each article can also by liked by users
+#### - Comment on articles can be left/deleted by the logged in user
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)dd

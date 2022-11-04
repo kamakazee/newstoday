@@ -41,6 +41,13 @@ const myApi = axios.create({
     })
   };
 
+  export const updateVotesByCommentId = (vote, comment_id) => {
+    return myApi.patch(`/comments/${comment_id}`, {inc_votes: vote}).then(({data}) => {
+        const {comment} = data;
+      return comment;
+    })
+  };
+
 
   export const fetchArticlesByArticleId = (articleId) => {
     return myApi.get(`/articles/${articleId}`).then(({data}) => {
